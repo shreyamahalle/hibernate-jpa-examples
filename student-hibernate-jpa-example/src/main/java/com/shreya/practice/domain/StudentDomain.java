@@ -1,11 +1,12 @@
 package com.shreya.practice.domain;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
+
 @Builder
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "STUDENT")
 //@EntityListeners(Auditing)
 public class StudentDomain {
