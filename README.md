@@ -1,7 +1,6 @@
 # hibernate-jpa-examples
 
 This repository contains various **Hibernate JPA** examples demonstrating key concepts and features of the **Java Persistence API (JPA)** using Hibernate as the JPA provider. It covers everything from basic entity mapping to advanced features like relationships, JPQL, Criteria API, caching, and transactions.
-
 ---
 
 ## Technologies Used
