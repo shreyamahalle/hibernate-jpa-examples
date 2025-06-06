@@ -15,7 +15,6 @@ This repository contains various **Hibernate JPA** examples demonstrating key co
 - Postman (for API testing)  
 
 ---
-
 ## Project Setup
 
 1. Clone the repository:
