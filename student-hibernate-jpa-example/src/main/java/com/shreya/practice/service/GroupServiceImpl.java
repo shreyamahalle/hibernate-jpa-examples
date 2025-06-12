@@ -54,14 +54,14 @@ public class GroupServiceImpl implements GroupService {
         return groupRepository.findAll().stream().map(this::populateModel).toList();
     }
 
-    private Group populateModel(GroupDomain domain) {
+    protected Group populateModel(GroupDomain domain) {
         return Group.builder()
                 .id(domain.getId())
                 .name(domain.getName())
                 .build();
     }
 
-    private GroupDomain populateDomain(Group model) {
+    protected GroupDomain populateDomain(Group model) {
         return GroupDomain.builder()
                 .id(model.getId())
                 .name(model.getName())
