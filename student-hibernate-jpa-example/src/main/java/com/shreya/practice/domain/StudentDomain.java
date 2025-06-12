@@ -7,8 +7,10 @@ import lombok.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "STUDENT")
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 //@EntityListeners(Auditing)
+@Table(name = "STUDENT")
 public class StudentDomain {
 
     @Id
