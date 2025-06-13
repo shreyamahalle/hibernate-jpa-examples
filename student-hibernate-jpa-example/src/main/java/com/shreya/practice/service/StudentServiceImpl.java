@@ -48,14 +48,15 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findAll().stream().map(this::populateModel).toList();
     }
 
-    private Student populateModel(StudentDomain domain){
+    private Student populateModel(StudentDomain domain) {
         return Student.builder()
                 .id(domain.getId())
                 .name(domain.getName())
                 .percentage(domain.getPercentage())
                 .build();
     }
-    private StudentDomain populateDomain(Student model){
+
+    private StudentDomain populateDomain(Student model) {
         return StudentDomain.builder()
                 .id(model.getId())
                 .name(model.getName())
