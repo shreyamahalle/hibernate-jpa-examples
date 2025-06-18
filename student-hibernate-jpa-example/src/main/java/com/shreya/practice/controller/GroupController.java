@@ -1,8 +1,10 @@
 package com.shreya.practice.controller;
 
 import com.shreya.practice.model.Group;
+import com.shreya.practice.model.StudentGroupProjection;
 import com.shreya.practice.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +23,12 @@ public class GroupController {
         System.out.println("Inside controller " + group);
         Group createGroup = groupService.createGroup(group);
         return ResponseEntity.ok(createGroup);
+    }
+
+    @GetMapping("/group-student")
+    public ResponseEntity<List<StudentGroupProjection>> fetchStudentGroupById(@RequestParam(name = "id") int id) {
+        System.out.println("Inside controller: " + id);
+        return new ResponseEntity<>(groupService.fetchStudentGroupById(id), HttpStatus.OK);
     }
 
     @GetMapping("/groups")
