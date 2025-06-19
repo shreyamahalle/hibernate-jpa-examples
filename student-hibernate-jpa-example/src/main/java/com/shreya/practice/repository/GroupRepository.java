@@ -21,5 +21,4 @@ public interface GroupRepository extends JpaRepository<GroupDomain, Integer> {
     WHERE s.id = ?1
     """, nativeQuery = true)
     List<StudentGroupProjection> findStudentGroupProjectionById(int id);
-
 }
