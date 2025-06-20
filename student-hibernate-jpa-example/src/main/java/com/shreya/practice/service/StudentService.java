@@ -15,6 +15,7 @@ public interface StudentService {
     Optional<Student> getStudentById(int id);
 
     Student deleteStudentById(int id);
+
     Student populateModel(StudentDomain domain);
 
     StudentDomain populateDomain(Student model);
