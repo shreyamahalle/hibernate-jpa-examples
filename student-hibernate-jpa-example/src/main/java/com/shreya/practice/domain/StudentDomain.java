@@ -9,7 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-//@EntityListeners(Auditing)
 @Table(name = "STUDENT_GROUP")
 public class StudentDomain {
 
