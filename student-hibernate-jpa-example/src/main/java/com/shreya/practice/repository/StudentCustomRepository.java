@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface StudentCustomRepository {
 
-    List<StudentDomain> findByCriteria(double percentage);
+    List<StudentDomain> findByCriteriaPercentage(double percentage);
 }
