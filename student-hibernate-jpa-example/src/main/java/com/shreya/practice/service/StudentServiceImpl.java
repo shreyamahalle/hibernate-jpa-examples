@@ -45,7 +45,16 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> getAllStudents() {
-        return studentRepository.findAll().stream().map(this::populateModel).toList();
+        return studentRepository.findAll()
+                .stream().map(this::populateModel).toList();
+    }
+
+    @Override
+    public List<Student> getAllStudentsByPercentage(double percentage) {
+        return studentRepository.findByCriteriaPercentage(percentage)
+                .stream()
+                .map(this::populateModel)
+                .toList();
     }
 
     public Student populateModel(StudentDomain domain) {

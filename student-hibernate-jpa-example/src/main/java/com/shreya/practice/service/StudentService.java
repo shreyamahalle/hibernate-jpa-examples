@@ -16,6 +16,8 @@ public interface StudentService {
 
     Student deleteStudentById(int id);
 
+    List<Student> getAllStudentsByPercentage(double percentage);
+
     Student populateModel(StudentDomain domain);
 
     StudentDomain populateDomain(Student model);

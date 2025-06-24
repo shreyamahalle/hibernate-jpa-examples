@@ -3,6 +3,7 @@ package com.shreya.practice.controller;
 import com.shreya.practice.model.Student;
 import com.shreya.practice.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,6 +40,12 @@ public class StudentController {
     public ResponseEntity<Student> deleteStudentById(@PathVariable int id) {
         Student deletedStudent = studentService.deleteStudentById(id);
         return (deletedStudent != null) ? ResponseEntity.ok(deletedStudent) : ResponseEntity.notFound().build();
+    }
+    @GetMapping("/student/by-percentage")
+    public ResponseEntity<List<Student>> getAllStudentsByPercentage(@RequestParam("percentage")double percentage) {
+        System.out.println("inside controller " + percentage);
+        List<Student> students = studentService.getAllStudents();
+        return new ResponseEntity<>(studentService.getAllStudentsByPercentage(percentage), HttpStatus.OK);
     }
 
 }
