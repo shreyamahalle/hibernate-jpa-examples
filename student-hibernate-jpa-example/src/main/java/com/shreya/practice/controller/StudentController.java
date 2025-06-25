@@ -41,8 +41,9 @@ public class StudentController {
         Student deletedStudent = studentService.deleteStudentById(id);
         return (deletedStudent != null) ? ResponseEntity.ok(deletedStudent) : ResponseEntity.notFound().build();
     }
+
     @GetMapping("/student/by-percentage")
-    public ResponseEntity<List<Student>> getAllStudentsByPercentage(@RequestParam("percentage")double percentage) {
+    public ResponseEntity<List<Student>> getAllStudentsByPercentage(@RequestParam("percentage") double percentage) {
         System.out.println("inside controller " + percentage);
         List<Student> students = studentService.getAllStudents();
         return new ResponseEntity<>(studentService.getAllStudentsByPercentage(percentage), HttpStatus.OK);
