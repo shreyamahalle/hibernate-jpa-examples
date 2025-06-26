@@ -47,5 +47,6 @@ public class GroupController {
     public ResponseEntity<Group> deleteGroupById(@PathVariable int id) {
         Group deletedGroup = groupService.deleteGroupById(id);
         return (deletedGroup != null) ? ResponseEntity.ok(deletedGroup) : ResponseEntity.notFound().build();
+
     }
 }
